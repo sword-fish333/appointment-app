@@ -1,0 +1,133 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #ecf0f1;
+}
+
+
+.vanilla-calendar {
+
+    width: 600px !important;
+    background-color: red;
+}
+.calendar-container{
+    margin-left:auto;
+    margin-right:0 !important;
+}
+.calendar-wrapper{
+    width:600px;
+    float:right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.main-appointment-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+    gap: 60px;
+    margin: 50px auto 0;
+}
+
+.appointment-column {
+    width: 50%;
+}
+
+.booking-times-main-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.time-intervals-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+
+.time-interval {
+    border-radius: 20px;
+    border: 1px solid coral;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.border-indigo-400 {
+    border-color: coral !important;
+}
+
+
+.time-intervals-wrapper {
+    margin-top: 20px;
+
+}
+
+.time-intervals-wrapper p {
+    margin-bottom: 5px;
+}
+
+
+.custom-underline:after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    margin: 0 auto;
+    width: 8%;
+    background: coral !important;
+}
+
+.time-wrapper h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.time-wrapper {
+    width: 50%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.disabled-time {
+    pointer-events: none;
+
+    opacity: 0.6;
+    background-color: #bdc3c7;
+}
+
+.submit-btn{
+    background-color: #20b2aa;
+    color:#fff;
+}
+.submit-btn:hover{
+    color: #fff !important;
+}
+.vanilla-calendar-day{
+    font-size: 15px !important;
+}
+
+.vanilla-calendar-week__day{
+    font-size: 17px !important;
+}
+.vanilla-calendar-month{
+    font-size: 19px !important;
+}
+.vanilla-calendar-year{
+    font-size: 19px !important;
+}
+
