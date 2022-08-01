@@ -28,6 +28,7 @@ class AppointmentController extends Controller
         }
         if($appointment_type->Bookings()->whereBetween('booking_date',
             [$booking_time->subMinutes(29)->toDateTimeLocalString(),$booking_time->addMinutes(29)->toDateTimeLocalString()])->exists()){
+
             return response()->json(['success'=>false,'message'=>'Sorry, booking already made for that time. Please try another one']);
 
         }
@@ -35,7 +36,11 @@ class AppointmentController extends Controller
             'booking_date'=>$booking_time,
             'user_id'=>auth()->id(),
         ]);
-        return response()->json(['success'=>true,'message'=>'Appointment made successfully']);
+        $disable_time1=implode('_',explode(':',$booking_time->format('H:i')));
+        $disable_time2=implode('_',explode(':',Carbon::parse($booking_time)->addMinutes(30)->format('H:i')));
+        $disable_time3=implode('_',explode(':',Carbon::parse($booking_time)->addHour()->format('H:i')));
+
+        return response()->json(['success'=>true,'message'=>'Appointment made successfully','disable_time1'=>$disable_time1,'disable_time2'=>$disable_time2,'disable_time3'=>$disable_time3]);
 
     }
 

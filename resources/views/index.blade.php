@@ -116,7 +116,10 @@
                         return;
                     }
                     showSuccess(data.message);
-                    $(`#booking_time_${disable_time}`).addClass('disabled-time')
+                    $(`#booking_time_${data.disable_time1}`).addClass('disabled-time')
+                    $(`#booking_time_${data.disable_time2}`).addClass('disabled-time')
+                    $(`#booking_time_${data.disable_time3}`).addClass('disabled-time')
+
                 },
                 error: function (error) {
                     if (error.responseJSON.message) {
@@ -154,7 +157,6 @@
                         return;
                     }
                     $('#time_intervals_main_wrapper').html(data.appointment_times)
-                  console.log('data',data)
                 },
                 error: function (error) {
                     if (error.responseJSON.message) {
